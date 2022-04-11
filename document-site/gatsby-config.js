@@ -7,12 +7,16 @@ module.exports = {
     social: [
       {
         name: `github`,
-        url: `https://github.com/codebushi/gatsby-theme-document`
+        url: `https://github.com/henry-hyunsik-jeong/henry-hyunsik-jeong.github.io`
       },
-      {
-        name: `twitter`,
-        url: `https://twitter.com/HuntaroSan`
-      }
+      // {
+      //   name: `linkedin`,
+      //   url: `https://github.com/henry-hyunsik-jeong/henry-hyunsik-jeong.github.io`
+      // }
+      // {
+      //   name: `twitter`,
+      //   url: `https://twitter.com/HuntaroSan`
+      // }
     ],
     sidebarConfig: {
       forcedNavOrder: ["/introduction", "/codeblock", "/codeblock2"],
