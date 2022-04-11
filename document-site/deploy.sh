@@ -4,3 +4,4 @@ CUR_DIR=${CANONICAL_DIR}
 
 gatsby build --prefix-paths
 python run_before_deploy.py
+npm run deploy
