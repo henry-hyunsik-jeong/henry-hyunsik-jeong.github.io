@@ -19,7 +19,7 @@ module.exports = {
       // }
     ],
     sidebarConfig: {
-      forcedNavOrder: ["/introduction", "/codeblock", "/codeblock2"],
+      forcedNavOrder: ["/About Me", "/SW테크", "/금융", "/데이터 분석", "/개똥철학"],
       ignoreIndex: true
     }
   },
