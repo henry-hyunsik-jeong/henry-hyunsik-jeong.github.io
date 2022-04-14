@@ -14,3 +14,7 @@ fig = px.scatter_3d(df, x = 'sepal_width',
  
 
 pio.write_html(fig, file='public/plotly.html')#, auto_open=True)
+
+
+with open("public/CNAME", "w") as f:
+    f.write("henryjeong.com")
