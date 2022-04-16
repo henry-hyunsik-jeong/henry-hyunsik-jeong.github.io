@@ -1,28 +1,30 @@
+
 module.exports = {
   siteMetadata: {
-    title: `ì •í˜„ì‹ ì €ì¥ì†Œ`,
-    name: `Code Bushi`,
-    siteUrl: `https://gatsby-theme-document.netlify.com`,
+    title: `¸ÅÀÏ¸ÅÀÏ Á¶±İ¾¿`,
+    name: `Á¤Çö½Ä ÀúÀå¼Ò`,
+    siteUrl: `http://henryjeong.com`,
     description: `This is my description that will be used in the meta tags and important for search results`,
     social: [
       {
         name: `github`,
         url: `https://github.com/henry-hyunsik-jeong/henry-hyunsik-jeong.github.io`
       },
-      // {
-      //   name: `linkedin`,
-      //   url: `https://github.com/henry-hyunsik-jeong/henry-hyunsik-jeong.github.io`
-      // }
-      // {
-      //   name: `twitter`,
-      //   url: `https://twitter.com/HuntaroSan`
-      // }
+      {
+        name: `tistory`,
+        url: `https://henry-hyunsik-jeong.tistory.com/`
+      },
+      {
+        name: `linkedin`,
+        url: `https://www.linkedin.com/in/hyunsik/`
+      }
     ],
     sidebarConfig: {
-      forcedNavOrder: ["/About Me", "/SWí…Œí¬", "/ê¸ˆìœµ", "/ë°ì´í„° ë¶„ì„", "/ê°œë˜¥ì² í•™"],
+      forcedNavOrder: ["/About Me", "/SWÅ×Å©", "/±İÀ¶", "/µ¥ÀÌÅÍ ºĞ¼®", "/°³¶ËÃ¶ÇĞ"],
       ignoreIndex: true
     }
   },
   
   plugins: [{ resolve: `gatsby-theme-document` }]
 };
+

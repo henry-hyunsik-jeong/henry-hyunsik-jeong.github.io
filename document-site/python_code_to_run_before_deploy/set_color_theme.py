@@ -1,4 +1,8 @@
 
+base_dir = "node_modules/gatsby-theme-document/src"
+
+def set_color_set():
+    content = """
 export default {
 text: '#fff',
 background: 'hsl(230,25%,18%)',
@@ -49,4 +53,37 @@ modes: {
 //   }
 // }
 };
-    
+    """
+    with open("src/gatsby-plugin-theme-ui/colors.js", "w") as f:
+        f.write(content)
+    with open(f"{base_dir}/gatsby-plugin-theme-ui/colors.js", "w") as f:
+        f.write(content)
+
+
+def set_color_cycle():
+    content = """
+import { useColorMode } from 'theme-ui';
+import colors from '../gatsby-plugin-theme-ui/colors';
+
+const customColors = Object.keys(colors.modes);
+const modes = [...customColors, 'dark'];
+
+function useCycleColor() {
+  const [colorMode, setColorMode] = useColorMode();
+
+  const cycleColorMode = () => {
+    const i = modes.indexOf(colorMode);
+    const n = (i + 1) % modes.length;
+    setColorMode(modes[n]);
+  };
+
+  return { cycleColorMode };
+}
+
+export default useCycleColor;
+"""
+    with open(f"{base_dir}/hooks/useCycleColor.js", "w") as f:
+        f.write(content)
+
+set_color_set()
+set_color_cycle()

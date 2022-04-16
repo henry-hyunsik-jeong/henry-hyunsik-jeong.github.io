@@ -1,8 +1,5 @@
-
-"좌측 네비게이션 바에서 목록의 펼침/닫음 조건을 뒤집음. isCollapsed 를 !isCollapsed로 변경"
-
-with open("node_modules/gatsby-theme-document/src/components/LeftSidebar/NavItem.js", "w") as f:
-    content = """import styled from '@emotion/styled';
+def set_contents(left_side_bar_width):
+    content_for_NavItem = """import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import { GlobalDispatchContext, GlobalStateContext } from '../../context/GlobalContextProvider';
@@ -74,13 +71,9 @@ list-style: none;
     margin: 0;
 }
 `;
-
 export default React.memo(NavItem);"""
-    f.write(content)
 
-"+ - 모양 변경"
-with open("node_modules/gatsby-theme-document/src/components/ButtonCollapse.js", "w") as f:
-    content = """
+    content_for_ButtonCollapse = """
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -122,13 +115,7 @@ ButtonCollapse.propTypes = {
 };
 
 export default ButtonCollapse;"""
-    f.write(content)
-
-
-"좌측 Nav 폭 조정"
-left_side_bar_width = 20
-with open("node_modules/gatsby-theme-document/src/components/LeftSidebar/index.js", "w") as f:
-    content = f"""
+    content_for_LeftSidebar_index = f"""
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -178,13 +165,7 @@ LeftSidebar.propTypes = {{
 
 export default React.memo(LeftSidebar);
 """
-    # print(content)
-    f.write(content)
-
-
-"브라우저의 폭이 좁을때 (좌측 Nav바 사라질때의 폭 조정"
-with open("node_modules/gatsby-theme-document/src/components/Header.js", "w") as f:
-    content = f"""
+    content_for_Header = f"""
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -268,12 +249,7 @@ Header.propTypes = {{
 export default Header;
 
 """
-    f.write(content)
-
-
-"폭 조정을 위해 Layout.js 수정"
-with open("node_modules/gatsby-theme-document/src/components/Layout.js", "w") as f:
-    content = f"""
+    content_for_Layout = f"""
 import {{ Global }} from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
@@ -338,4 +314,29 @@ Layout.propTypes = {{
 
 export default Layout;
 """
-    f.write(content)
+    return content_for_NavItem, content_for_ButtonCollapse, content_for_LeftSidebar_index, content_for_Header, content_for_Layout
+
+
+if __name__=="__main__":
+    content_for_NavItem, content_for_ButtonCollapse, content_for_LeftSidebar_index, content_for_Header, content_for_Layout = set_contents(left_side_bar_width=20)
+
+    base_dir = "node_modules/gatsby-theme-document/src"
+    with open(f"{base_dir}/components/LeftSidebar/NavItem.js", "w") as f:
+        "좌측 네비게이션 바에서 목록의 펼침/닫음 조건을 뒤집음. isCollapsed 를 !isCollapsed로 변경"
+        f.write(content_for_NavItem)
+
+    with open(f"{base_dir}/components/ButtonCollapse.js", "w") as f:
+        "+ - 모양 변경"
+        f.write(content_for_ButtonCollapse)
+
+    with open(f"{base_dir}/components/LeftSidebar/index.js", "w") as f:
+        "좌측 Nav 폭 조정"
+        f.write(content_for_LeftSidebar_index)
+
+    with open(f"{base_dir}/components/Header.js", "w") as f:
+        "브라우저의 폭이 좁을때 (좌측 Nav바 사라질때의 폭 조정"
+        f.write(content_for_Header)
+
+    with open(f"{base_dir}/components/Layout.js", "w") as f:
+        "폭 조정을 위해 Layout.js 수정"
+        f.write(content_for_Layout)

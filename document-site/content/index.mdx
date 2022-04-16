@@ -55,7 +55,7 @@ To edit or add colors modes, edit the file at `src/gatsby-plugin-theme-ui/colors
 
 The contents of the MDX files are also styled with Theme UI and can be edited at `src/gatsby-plugin-theme-ui/index.js`. The styles for the heading tags are found at `src/gatsby-plugin-theme-ui/headingsjs`. Learn more about [styling MDX](https://theme-ui.com/styling-mdx) from the Theme UI docs.
 
-## Syntax Colors
+### Syntax Colors
 
 Document uses [@theme-ui/prism](https://theme-ui.com/prism) for syntax highlighting. Different presets can be used by editing the file at `src/gatsby-plugin-theme-ui/index.js`. The desired preset must be included at the top of the file and spread into the `pre` styles
 
@@ -71,11 +71,11 @@ styles: {
 
 The code blocks will not change color based on the color modes. For a complete list of all available prism presets, check out the Theme UI [syntax themes](https://theme-ui.com/prism#syntax-themes).
 
-## Social Media Icons
+### Social Media Icons
 
 The social media icons in the header can be edited in the `gatsby-config.js` file, under social. Currently, you can only add Twitter and Github links.
 
-## SEO, Site Image, and Manifest Icons
+### SEO, Site Image, and Manifest Icons
 
 Document uses React Helmet to add meta tags to the website's `<head>` tag. When adding/editing a file in the content folder, be sure to include the Title and Description in the frontmatter. These are automatically used to generate the title and description meta tags for the page.
 
