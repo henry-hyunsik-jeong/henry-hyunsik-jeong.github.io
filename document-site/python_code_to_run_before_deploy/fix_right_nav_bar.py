@@ -139,7 +139,7 @@ const RightSidebar = ({ tableOfContents, location, headings }) => {
 
 const RightSidebarWrapper = styled.aside`
   display: none;
-  flex: 0 0 16rem;
+  flex: 0 0 20rem;
   font-size: 1rem;
   font-weight: 600;
   ${mediaqueries.desktop_medium_up`
@@ -153,7 +153,7 @@ const RightSidebarNav = styled.nav`
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 16rem;
+  width: 20rem;
   height: 100%;
   padding: 7rem 1rem 0;
 `;
