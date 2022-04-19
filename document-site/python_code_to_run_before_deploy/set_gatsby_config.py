@@ -1,4 +1,4 @@
-content = """
+content_main_config = """
 
 module.exports = {
   siteMetadata: {
@@ -27,14 +27,100 @@ module.exports = {
   },
   
   plugins: [
-    { resolve: `gatsby-theme-document` },
+    { resolve: `gatsby-theme-document` }
+  ]
+};
+"""
+
+content_sub_config = """
+// import { useColorMode } from '../theme-ui'
+// const [colorMode, setColorMode] = useColorMode()
+
+// if (colorMode=='dark') {
+
+
+if ( true ) {
+  color1 = "gray";
+} else {
+  color1 = "white";
+}
+
+module.exports = {
+  siteMetadata: {
+    title: `Document by Code Bushi`,
+    name: `Code Bushi`,
+    siteUrl: `https://codebushi.com`,
+    description: `This is my description that will be used in the meta tags and important for search results`,
+    social: [
+      {
+        name: `github`,
+        url: `https://github.com/codebushi`
+      },
+      {
+        name: `twitter`,
+        url: `https://twitter.com/HuntaroSan`
+      }
+    ],
+    sidebarConfig: {
+      forcedNavOrder: ['/'],
+      ignoreIndex: false
+    }
+  },
+  plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `content`,
+        name: `content`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 704
+            }
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false
+            }
+          },
+          `gatsby-remark-embed-video`
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Document`,
+        short_name: `Document`,
+        start_url: `/`,
+        background_color: `#182952`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: 'src/site-icon.png'
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-react-helmet`
+    ,
     {
       resolve: `gatsby-plugin-scroll-indicator`,
       options: {
         // Configure color of the scroll indicator
-        color: "white",
+        // color: "gray",
+        color: color1,
+        // color: ${p => p.theme.colors.text},
         // Height of the scroll indicator
-        height: "3px",
+        height: "6px",
         // Configure paths where the scroll indicator will appear
         paths: ["/"],
         // Configure the z-index of the indicator element
@@ -45,4 +131,7 @@ module.exports = {
 };
 """
 with open("gatsby-config.js", "w") as f:
-    f.write(content)
+    f.write(content_main_config)
+
+with open("node_modules/gatsby-theme-document/gatsby-config.js", "w") as f:
+    f.write(content_main_config)
