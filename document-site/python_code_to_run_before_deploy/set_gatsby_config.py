@@ -134,4 +134,4 @@ with open("gatsby-config.js", "w") as f:
     f.write(content_main_config)
 
 with open("node_modules/gatsby-theme-document/gatsby-config.js", "w") as f:
-    f.write(content_main_config)
+    f.write(content_sub_config)

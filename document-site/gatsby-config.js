@@ -1,7 +1,9 @@
+
+
 module.exports = {
   siteMetadata: {
-    title: `ì•ˆë…•í•˜ì„¸ìš”`,
-    name: `ì •í˜„ì‹`,
+    title: `¸ÅÀÏ¸ÅÀÏ Á¶±İ¾¿`,
+    name: `Á¤Çö½Ä`,
     siteUrl: `http://henryjeong.com`,
     description: `This is my description that will be used in the meta tags and important for search results`,
     social: [
@@ -19,7 +21,7 @@ module.exports = {
       }
     ],
     sidebarConfig: {
-      forcedNavOrder: ["/About Me", "/ê°œë˜¥ì² í•™", "/SWí…Œí¬", "/ë°ì´í„° ë¶„ì„", "/ê¸ˆìœµ"],
+      forcedNavOrder: ["/About Me", "/°³¶ËÃ¶ÇĞ", "/SWÅ×Å©", "/µ¥ÀÌÅÍ ºĞ¼®", "/±İÀ¶"],
       ignoreIndex: true
     }
   },
