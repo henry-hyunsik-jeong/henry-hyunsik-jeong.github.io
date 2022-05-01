@@ -33,6 +33,7 @@ module.exports = {
 """
 
 content_sub_config = """
+
 // import { useColorMode } from '../theme-ui'
 // const [colorMode, setColorMode] = useColorMode()
 
@@ -92,7 +93,9 @@ module.exports = {
             }
           },
           `gatsby-remark-embed-video`
-        ]
+        ],
+        remarkPlugins: [require("remark-math")],
+        rehypePlugins: [require("rehype-katex")]
       }
     },
     {
@@ -122,13 +125,14 @@ module.exports = {
         // Height of the scroll indicator
         height: "6px",
         // Configure paths where the scroll indicator will appear
-        paths: ["/"],
+        // paths: ["/"],
         // Configure the z-index of the indicator element
         zIndex: `9999`
       }
     }
   ]
 };
+
 """
 with open("gatsby-config.js", "w") as f:
     f.write(content_main_config)
